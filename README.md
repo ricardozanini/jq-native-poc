@@ -6,6 +6,14 @@ on [native image](https://www.graalvm.org/).
 The Jackson JQ library call is wrapped around a REST endpoint that you can call
 from your terminal after running the application:
 
+## Caveats
+
+- `jq.json` configuration file, and the classes used to marshal it needed to be manually added to the native build configuration
+- For the `ServiceLoader` to work we also needed to turn `quarkus.native.auto-service-loader-registration` property to true
+
+Having a Quarkus extension could overcome these "issues", since it would be handled by the extension.
+Client applications would just use the extension and everything would work fine.
+
 ```shell
 curl  -X POST -H 'Content-Type:application/json' -H 'Accept:application/json' -d '{"expression": "join(\"-\")", "document": ["1", 2]}'  http://localhost:8080/parser 
 ```
