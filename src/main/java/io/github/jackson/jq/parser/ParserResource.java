@@ -1,4 +1,4 @@
-package org.acme.jackson.jq.parser;
+package io.github.jackson.jq.parser;
 
 import java.util.ArrayList;
 import java.util.List;

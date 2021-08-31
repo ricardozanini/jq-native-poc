@@ -1,4 +1,4 @@
-package org.acme.jackson.jq.parser;
+package io.github.jackson.jq.parser;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
