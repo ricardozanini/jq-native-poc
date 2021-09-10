@@ -23,13 +23,11 @@ import net.thisptr.jackson.jq.quarkus.JacksonJqQuarkusScope;
 @Consumes(MediaType.APPLICATION_JSON)
 public class ParserResource {
 
-    //private final Scope rootScope;
     @Inject
     JacksonJqQuarkusScope rootScope;
 
     public ParserResource() {
-        //this.rootScope = Scope.newEmptyScope();
-        //BuiltinFunctionLoader.getInstance().loadFunctions(Versions.JQ_1_6, this.rootScope);
+
     }
 
     @POST
