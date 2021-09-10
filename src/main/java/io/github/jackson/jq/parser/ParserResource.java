@@ -3,6 +3,7 @@ package io.github.jackson.jq.parser;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -15,17 +16,20 @@ import net.thisptr.jackson.jq.JsonQuery;
 import net.thisptr.jackson.jq.Scope;
 import net.thisptr.jackson.jq.Versions;
 import net.thisptr.jackson.jq.exception.JsonQueryException;
+import net.thisptr.jackson.jq.quarkus.JacksonJqQuarkusScope;
 
 @Path("/parser")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class ParserResource {
 
-    private final Scope rootScope;
+    //private final Scope rootScope;
+    @Inject
+    JacksonJqQuarkusScope rootScope;
 
     public ParserResource() {
-        this.rootScope = Scope.newEmptyScope();
-        BuiltinFunctionLoader.getInstance().loadFunctions(Versions.JQ_1_6, this.rootScope);
+        //this.rootScope = Scope.newEmptyScope();
+        //BuiltinFunctionLoader.getInstance().loadFunctions(Versions.JQ_1_6, this.rootScope);
     }
 
     @POST
