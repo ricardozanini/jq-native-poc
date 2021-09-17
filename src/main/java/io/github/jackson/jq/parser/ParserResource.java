@@ -16,9 +16,9 @@ import javax.ws.rs.core.MediaType;
 import com.fasterxml.jackson.databind.JsonNode;
 import io.quarkus.runtime.StartupEvent;
 import net.thisptr.jackson.jq.JsonQuery;
+import net.thisptr.jackson.jq.Scope;
 import net.thisptr.jackson.jq.Versions;
 import net.thisptr.jackson.jq.exception.JsonQueryException;
-import net.thisptr.jackson.jq.quarkus.JacksonJqQuarkusScope;
 
 @Path("/parser")
 @Produces(MediaType.APPLICATION_JSON)
@@ -26,7 +26,7 @@ import net.thisptr.jackson.jq.quarkus.JacksonJqQuarkusScope;
 public class ParserResource {
 
     @Inject
-    JacksonJqQuarkusScope rootScope;
+    Scope rootScope;
 
     public ParserResource() {
 
